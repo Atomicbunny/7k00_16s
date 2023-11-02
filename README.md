@@ -3,6 +3,8 @@
 
 Before anything, find and identify non standard residues and ensure you know where they are in the molecule
 
+Charm-gui website: https://charmm-gui.org/ 
+
  Instructions for use of charm-gui for development of namd compatible pdb and psf files:
 
  1: download 7k00pdbbundle1edit.pdb (or whatever pdb file you wish), 7k00pbdbundle contains all data concerning the 16s subunit of the bacterial ribosome.
