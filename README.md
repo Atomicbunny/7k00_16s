@@ -1,5 +1,5 @@
 # 7k00_16s
-16s subunit of the bacterial ribosome
+How to use Charmm-GUI to produce NAMD compatible pdb and psf files
 
 ***Before doing anything, find and identify non-standard residues and ensure you know where they are in the molecule***
 
@@ -7,7 +7,7 @@
 
  Instructions for use of Charmm-GUI for development of namd compatible pdb and psf files:
 
- 1: Download 7k00pdbbundle1edit.pdb (or whatever pdb file you wish), 7k00pbdbundle contains all data concerning the 16s subunit of the bacterial ribosome.
+ 1: Download 7k00pdbbundle1edit.pdb (or whatever pdb file you wish), 7k00pbdbundle contains all data concerning the 16s subunit of the bacterial ribosome.  (while Charmm-GUI can pick out segments on it own, I did it manually for the provided file)
 
  
  2:(if you have an account, just sign in) Create an account on Charmm-GUI , set your password.
@@ -19,7 +19,7 @@
  4: Upload the pdb file that you want to convert
 
  
- 5: Click the arrow captioned next step at the bottom right of the screen, it may take a long time for large molecules (15-30 min)
+ 5: Click the arrow captioned next step at the bottom right of the screen, it may take a long time for large molecules (15-30 minutes max, avg time about 10 minutes)
 
  
  6: Once loading is finished, it will automatically process segments out of the input, and give you options to modify the settings it generated. Click the next step arrow once you are satisfied. (I used the settings it generated for convenience)
