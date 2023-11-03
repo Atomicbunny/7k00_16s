@@ -28,7 +28,8 @@ How to use Charmm-GUI to produce NAMD compatible pdb and psf files
  7: You are given several options, but we are interested in one near the bottom titled Non-standard amino acid / RNA substitution, check the box next to it.
 
  
- 8: By referencing the heteroatoms in your pdb file, enter every residue id for each non-standard/engineered residue in the substitution section, and use its 3 letter identification as provided by the Charmm-GUI program above in the section titled Renaming Engineered Residues. Charmm-GUI offers both graphical and text entry for the non-standard residues in the form of the select image and preceding drop down menu respectively.
+ 8: By referencing the heteroatoms in your pdb file, enter every residue id for each non-standard/engineered residue in the substitution section, and use its 3 letter identification as provided by the Charmm-GUI program above in the section titled Renaming Engineered Residues. Charmm-GUI offers both graphical and text entry for the non-standard residues in the form 
+ of the select image and preceding drop down menu respectively.
 
  
  9: You must select the segment first (which is why you need to have the pdb file ready of non standard resid's listed) and then select the residue id. Continue adding lines for residue substitution until you have added all non standard residues (even repeats of the same type of residue) to the list for substitution. 
@@ -40,4 +41,4 @@ How to use Charmm-GUI to produce NAMD compatible pdb and psf files
  11. After this, I uploaded these files to the deac cluster and ran the solvate.pgn script but modified for the file names I had given the pdb and psf files. (this is provided in this repository for 7k0016S)
 
 
- 12. These files should be viewable with vmd, use vmd to quick check for any major issues with you molecule. If nothing is immediately obvious, and no significant errors were logged during generation, then its probably good. 
+ 12. These files should be viewable with vmd, use vmd to quick check for any major issues with your molecule. If nothing is immediately obvious, and no significant errors were logged during generation, then its probably good. 
