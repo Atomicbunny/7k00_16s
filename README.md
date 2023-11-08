@@ -1,28 +1,26 @@
-# 7k00_16s
-How to use Charmm-GUI to produce NAMD compatible pdb and psf files
+# _E. coli_ 16S Ribosome 
+How to use Charmm-GUI to produce NAMD compatible PDB and PSF files
 
 ***Before doing anything, find and identify non-standard residues and ensure you know where they are in the molecule***
 
+Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
+1. Downloaded "PDB format-like files (.tar.gz) and extracted 7k00pdbbundle1.pdb
+2. Selected out Chain A, which corresponds to 16S ribosome.
+3. Resulting file is 7k00pdbbundle1edit.pdb.
+
 --- Charmm-GUI website: https://charmm-gui.org/ ---
 
- Instructions for use of Charmm-GUI for development of namd compatible pdb and psf files:
-
- 1: Download 7k00pdbbundle1edit.pdb (or whatever pdb file you wish), 7k00pbdbundle contains all data concerning the 16s subunit of the bacterial ribosome.  (while Charmm-GUI can pick out segments on it own, I did it manually for the provided file)
-
+ Instructions for use of CHARMM-GUI for development of NAMD compatible PDB and PSF files:
  
- 2:(if you have an account, just sign in) Create an account on Charmm-GUI , set your password.
+ 1:(if you have an account, just sign in) Create an account on CHARMM-GUI and set your password.
 
- 
- 3: Select PDB reader and manipulator from the menu
+ 2: Select "input generator" link, then "PDB Reader & Manipulator" link.
 
+ 3: Upload the PDB file that you want to convert and select the "Check/Correct PDB Format" button.
  
- 4: Upload the pdb file that you want to convert
-
+ 4: Click the arrow captioned next step at the bottom right of the screen. (Note: It may take a long time for large molecules, about 15-30 minutes max, avg time about 10 minutes).
  
- 5: Click the arrow captioned next step at the bottom right of the screen, it may take a long time for large molecules (15-30 minutes max, avg time about 10 minutes)
-
- 
- 6: Once loading is finished, it will automatically process segments out of the input, and give you options to modify the settings it generated. Click the next step arrow once you are satisfied. (I used the settings it generated for convenience)
+ 5: Once loading is finished, it will automatically process segments out of the input, and give you options to modify the settings it generated. We removed the Paromomycin (PAR) and Spermidine (SPD) but kept all nucleic acids, Mg(2+) ions, and crystal waters. Click the next step arrow once you are satisfied.
 
  
  7: You are given several options, but we are interested in one near the bottom titled Non-standard amino acid / RNA substitution, check the box next to it.
