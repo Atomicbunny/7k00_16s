@@ -81,7 +81,7 @@ Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution:
 
 9: run solvate_with_tmaomt2 to resolvate the system. This will create files that will be used in simulation.
 
-10: repeat twice more to create 3 separate random TMAO coordinate sets
+10: repeat twice more to create 3 separate pseudorandom TMAO coordinate sets
 
 11: run minimization/equilibration step
 
