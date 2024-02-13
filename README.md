@@ -44,10 +44,14 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
  12. These files should be viewable with vmd, use vmd to quick check for any major issues with your molecule. If nothing is immediately obvious, and no significant errors were logged during generation, then its probably good. 
 
+
+
 --- Equilibration --- 
 
 1. run 7k00md-equil.slurm with pdbreader files
 2. check that trajectory generated is acceptable using vmd and analysis tools.
+
+
 
 --- Addition of TMAO and Dynamics ---
 
@@ -60,7 +64,6 @@ Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution:
 1: 7k0016s2.namd.pdb is simply a renamed version of pdbreaderedit1.pdb, this was used in the generation of the following pdb files
 
 2: Solvate 16s subunit in water box with Na+ and Cl- ions at 0.01 mol/L to neutralize charge. Keep unsolvated file on hand. (we will use this file as a reference but not as our final water box, this is due to errors using autoionize that remained unresolved through testing)
-
 
 3: remove crystal waters from solvated pdb and run center_prot_origin.tcl to center the waters around the origin.
 
