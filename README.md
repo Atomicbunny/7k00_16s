@@ -3,10 +3,14 @@ How to use Charmm-GUI to produce NAMD compatible PDB and PSF files
 
 ***Before doing anything, find and identify non-standard residues and ensure you know where they are in the molecule***
 
+For control test of simulation:
+Equilibration of 7k00 16s subunit in water box
+
 Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 1. Downloaded "PDB format-like files (.tar.gz) and extracted 7k00pdbbundle1.pdb
 2. Selected out Chain A, which corresponds to 16S ribosome.
 3. Resulting file is 7k00pdbbundle1edit.pdb.
+4. renamed to 
 
 --- Charmm-GUI website: https://charmm-gui.org/ ---
 
@@ -18,9 +22,9 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
  3: Upload the PDB file that you want to convert and select the "Check/Correct PDB Format" button.
  
- 4: Click the arrow captioned next step at the bottom right of the screen. (Note: It may take a long time for large molecules, about 15-30 minutes max, avg time about 10 minutes).
+ 4: Click the arrow captioned next step at the bottom right of the screen. (Note: It may take a long time for large molecules, about 15-30 minutes max, avg time about 5 minutes).
  
- 5: Once loading is finished, it will automatically process segments out of the input, and give you options to modify the settings it generated. We removed the Paromomycin (PAR) but kept all nucleic acids and Spermidine (SPD), Mg(2+) ions, and crystal waters. Click the next step arrow once you are satisfied.
+ 5: Once loading is finished, it will automatically process segments out of the input, and give you options to modify the settings it generated. We removed the Paromomycin (PAR) but kept all nucleic acids of  and Spermidine (SPD), Mg(2+) ions, and crystal waters. Click the next step arrow once you are satisfied.
 
  
  7: You are given several options, but we are interested in one near the bottom titled Non-standard amino acid / RNA substitution, check the box next to it.
