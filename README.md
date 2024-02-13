@@ -10,7 +10,6 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 1. Downloaded "PDB format-like files (.tar.gz) and extracted 7k00pdbbundle1.pdb
 2. Selected out Chain A, which corresponds to 16S ribosome.
 3. Resulting file is 7k00pdbbundle1edit.pdb.
-4. renamed to 
 
 --- Charmm-GUI website: https://charmm-gui.org/ ---
 
@@ -44,3 +43,45 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
 
  12. These files should be viewable with vmd, use vmd to quick check for any major issues with your molecule. If nothing is immediately obvious, and no significant errors were logged during generation, then its probably good. 
+
+--- Equilibration --- 
+
+1. run 7k00md-equil.slurm with pdbreader files
+2. check that trajectory generated is acceptable
+
+--- Addition of TMAO and Dynamics ---
+
+Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution:
+
+*for water box of size used (can be found in 7k0016s2.namd.pdb) , 5781 molecules of TMAO corresonds to 1.00 mol/L TMAO
+
+*crystal waters and ions present in the 16s subunit from original 7k00 pdb were retained.
+
+
+1: Using same base 7k00 pdb file obtained from rcsb website.
+
+2: Charmm-GUI used to select relevant chains to isolate 16s subunit. 
+
+3: Solvate 16s subunit in water box with Na+ and Cl- ions at 0.01 mol/L to neutralize charge. Keep unsolvated file on hand. (we will use this file as a reference but not as our final water box, this is due to errors using autoionize that remained unresolved through testing)
+
+4: remove crystal waters from solvated pdb and run center_prot_origin.tcl to center the waters around the origin.
+
+5: run gen_tmaomt.sh to produce two files, one containing a list of all water coordinates and one containing a list of numbers psueodrandomly generated to 
+ denote which lines of water coordinates are to be used.
+
+6: manually make changes to file with water coordinates, use regex and find to replace all entries /d- with /d - to resolve unspaced elements, also remove
+ all instances of 1.00 whole word to remove fourth columns.
+
+7: run gen_tmaomt2.sh, this will create a bash script tmao4.sh that can be run by entering ./tmao4.sh > tmao.pdb, this will create tmao.pdb
+
+8: manually realign all entries past residue 1000 of tmao.pdb to eliminate column alignment errors.
+
+9: run setup_with_tmaomt using the unsolvated pdb file, this will generate a pdb with the subunit surrounded by TMAO
+
+10: run solvated_with_tmao to resolvate the system.
+
+11: repeat twice more to create 3 separate random TMAO coordinate sets
+
+11: run minimization/equilibration step
+
+12: run dynamics
