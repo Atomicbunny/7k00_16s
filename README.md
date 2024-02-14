@@ -65,9 +65,9 @@ Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution:
 
 2: Solvate 16s subunit in water box with Na+ and Cl- ions at 0.01 mol/L to neutralize charge. Keep unsolvated file on hand. (we will use this file as a reference but not as our final water box, this is due to errors using autoionize that remained unresolved through testing)
 
-3: remove crystal waters from solvated pdb and run center_prot_origin.tcl to center the waters around the origin.
+3: remove crystal waters from solvated pdb and run center_prot_origin.tcl to center the waters around the origin, result is renamed to centered.1zih_wbi.pdb (you can remove the RNA, ions and crystal waters as all we are interested in are the generated water molecule coordinates)
 
-4: run gen_tmaomt.sh to produce two files, one containing a list of all water coordinates (tmao1.dat)  and one containing a list of numbers psueodrandomly generated to 
+4: run gen_tmaomt.sh with first argument "centered.1zih_wbi.pdb" and second argument "5781" to produce two files, one containing a list of all water coordinates (tmao1.dat)  and one containing a list of numbers psueodrandomly generated to 
  denote which lines of water coordinates are to be used (tmao2.dat).
 
 5: manually make changes to file with water coordinates (tmao1.dat) , use regex and find to replace all entries /d- with /d - to resolve unspaced elements, also remove
@@ -81,7 +81,7 @@ Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution:
 
 9: run solvate_with_tmaomt2 to resolvate the system. This will create files that will be used in simulation.
 
-10: repeat steps 4-9 twice more to create 3 separate pseudorandom TMAO coordinate sets
+10: repeat steps 4-9 twice more to create 3 separate pseudorandom TMAO coordinate sets implemented with the 16s subunit in a water box.
 
 11: run minimization/equilibration step in separate directories for each pdb
 
