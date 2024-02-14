@@ -65,7 +65,7 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 4: run gen_tmaomt.sh with first argument "centered.1zih_wbi.pdb" and second argument "5781" to produce a file containing a list of all water coordinates (tmao1.dat).
 
 5: manually make changes to this file (tmao1.dat) , use regex and find to replace all entries /d- with "0 -" to resolve unspaced elements, also remove
- all instances of 1.00 whole word to remove fourth columns.
+ all instances of 1.00 whole word to remove fourth columns. (Do note that this solution is imperfect, however the loss in coordinate precision is very small)
 
 6: run gen_tmaomt2.sh, this will create tmao.pdb, a pseudorandom coordinate pdb file of TMAO molecules.
 
