@@ -48,7 +48,7 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
  14.  check that trajectory generated is acceptable using vmd and analysis tools.
 
 
-#  Addition of TMAO and Dynamics 
+#  Simulation TMAO
 
 Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution:
 
