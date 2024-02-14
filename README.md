@@ -62,13 +62,12 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
 3: removed crystal waters from solvated pdb and ran center_prot_origin.tcl to center the waters around the origin, result is renamed to centered.1zih_wbi.pdb (you can remove the RNA, ions and crystal waters as all we are interested in are the generated water molecule coordinates)
 
-4: run gen_tmaomt.sh with first argument "centered.1zih_wbi.pdb" and second argument "5781" to produce two files, one containing a list of all water coordinates (tmao1.dat)  and one containing a list of numbers psueodrandomly generated to 
- denote which lines of water coordinates are to be used (tmao2.dat).
+4: run gen_tmaomt.sh with first argument "centered.1zih_wbi.pdb" and second argument "5781" to produce a file containing a list of all water coordinates (tmao1.dat).
 
-5: manually make changes to file with water coordinates (tmao1.dat) , use regex and find to replace all entries /d- with /d - to resolve unspaced elements, also remove
+5: manually make changes to this file (tmao1.dat) , use regex and find to replace all entries /d- with "0 -" to resolve unspaced elements, also remove
  all instances of 1.00 whole word to remove fourth columns.
 
-6: run gen_tmaomt2.sh, this will create a bash script tmao4.sh that can be run by entering ./tmao4.sh > tmao.pdb, this will create tmao.pdb
+6: run gen_tmaomt2.sh, this will create tmao.pdb, a pseudorandom coordinate pdb file of TMAO molecules.
 
 7: manually realign all entries past residue 1000 of tmao.pdb to eliminate column alignment errors.
 
@@ -76,7 +75,7 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
 9: run solvate_with_tmaomt2 to resolvate the system. This will create files that will be used in simulation.
 
-10: repeat steps 4-9 twice more to create 3 separate pseudorandom TMAO coordinate sets implemented with the 16s subunit in a water box.
+10: repeat steps 6-9 twice more to create 3 separate pseudorandom TMAO coordinate sets implemented with the 16s subunit in a water box.
 
 11: run minimization/equilibration step in separate directories for each pdb
 
