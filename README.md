@@ -1,4 +1,4 @@
-Simulation of the _E. coli_ 16S Ribosome
+# Simulation of the _E. coli_ 16S Ribosome with Chemical Modifications
 How to use Charmm-GUI to produce NAMD compatible PDB and PSF files
 
 ***Before doing anything, find and identify non-standard residues and ensure you know where they are in the molecule***
@@ -32,7 +32,6 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
  8: By referencing the heteroatoms in your pdb file, enter every residue id for each non-standard/engineered residue in the substitution section, and use its 3 letter identification as provided by the Charmm-GUI program above in the section titled Renaming Engineered Residues. Charmm-GUI offers both graphical and text entry for the non-standard residues in the form 
  of the select image and preceding drop down menu respectively.
 
- 
  9: You must select the segment first (which is why you need to have the pdb file ready of non standard resid's listed) and then select the residue id. Continue adding lines for residue substitution until you have added all non standard residues (even repeats of the same type of residue) to the list for substitution. 
 
 
@@ -42,18 +41,14 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
  11. After this, I uploaded these files to the deac cluster and ran the solvate.pgn script but modified for the file names I had given the pdb and psf files. (this is provided in this repository for 7k0016S)
 
 
- 12. These files should be viewable with vmd, use vmd to quick check for any major issues with your molecule. If nothing is immediately obvious, and no significant errors were logged during generation, then its probably good. 
+ 12. These files should be viewable with vmd, use vmd to quick check for any major issues with your molecule. If nothing is immediately obvious, and no significant errors were logged during generation, then its probably good.
+
+ 13.  run 7k00md-equil.slurm with pdbreader files
+
+ 14.  check that trajectory generated is acceptable using vmd and analysis tools.
 
 
-
---- Equilibration --- 
-
-1. run 7k00md-equil.slurm with pdbreader files
-2. check that trajectory generated is acceptable using vmd and analysis tools.
-
-
-
---- Addition of TMAO and Dynamics ---
+#  Addition of TMAO and Dynamics 
 
 Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution:
 
