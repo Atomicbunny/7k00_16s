@@ -35,22 +35,22 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
  9: You must select the segment first (which is why you need to have the pdb file ready of non standard resid's listed) and then select the residue id. Continue adding lines for residue substitution until you have added all non standard residues (even repeats of the same type of residue) to the list for substitution. 
 
 
- 10: This should complete after only a few minutes maximum. It will output a NAMD compatible pdb and psf file titled "step1_pdbreader" that can be downloaded as part of a tgz file along with the other files related to it.
+10: This should complete after only a few minutes maximum. It will output a NAMD compatible pdb and psf file titled "step1_pdbreader" that can be downloaded as part of a tgz file along with the other files related to it.
 
 
- 11. After this, I uploaded these files to the deac cluster and ran the solvate.pgn script but modified for the file names I had given the pdb and psf files. (this is provided in this repository for 7k0016S)
+11: After this, I uploaded these files to the deac cluster and ran the solvate.pgn script but modified for the file names I had given the pdb and psf files. (this is provided in this repository for 7k0016S)
 
 
- 12. These files should be viewable with vmd, use vmd to quick check for any major issues with your molecule. If nothing is immediately obvious, and no significant errors were logged during generation, then its probably good.
+12: These files should be viewable with vmd, use vmd to quick check for any major issues with your molecule. If nothing is immediately obvious, and no significant errors were logged during generation, then its probably good.
 
- 13.  run 7k00md-equil.slurm with pdbreader files
+13:  run 7k00md-equil.slurm with pdbreader files
 
- 14.  check that trajectory generated is acceptable using vmd and analysis tools.
+14:  check that trajectory generated is acceptable using vmd and analysis tools.
 
 
 #  Simulation TMAO
 
-Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution:
+---Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution ---
 
 *for water box of size used (can be found in 7k0016s2.namd.pdb) , 5781 molecules of TMAO corresonds to 1.00 mol/L TMAO
 
