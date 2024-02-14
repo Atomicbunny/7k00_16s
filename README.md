@@ -61,11 +61,11 @@ Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution:
 
 *crystal waters and ions present in the 16s subunit from original 7k00 pdb were retained.
 
-1: 7k0016s2.namd.pdb is simply a renamed version of pdbreaderedit1.pdb, this was used in the generation of the following pdb files
+1: 7k0016s2.namd.pdb is simply a renamed version of pdbreaderedit1.pdb, this was used in the generation of the following pdb files.
 
-2: Solvate 16s subunit in water box with Na+ and Cl- ions at 0.01 mol/L to neutralize charge. Keep unsolvated file on hand. (we will use this file as a reference but not as our final water box, this is due to errors using autoionize that remained unresolved through testing)
+2: Solvate 16s subunit in water box with Na+ and Cl- ions at 0.01 mol/L to neutralize charge. Kept unsolvated file on hand. (we will use this file as a reference but not as our final water box, this is due to errors using autoionize that remained unresolved through testing)
 
-3: remove crystal waters from solvated pdb and run center_prot_origin.tcl to center the waters around the origin, result is renamed to centered.1zih_wbi.pdb (you can remove the RNA, ions and crystal waters as all we are interested in are the generated water molecule coordinates)
+3: removed crystal waters from solvated pdb and ran center_prot_origin.tcl to center the waters around the origin, result is renamed to centered.1zih_wbi.pdb (you can remove the RNA, ions and crystal waters as all we are interested in are the generated water molecule coordinates)
 
 4: run gen_tmaomt.sh with first argument "centered.1zih_wbi.pdb" and second argument "5781" to produce two files, one containing a list of all water coordinates (tmao1.dat)  and one containing a list of numbers psueodrandomly generated to 
  denote which lines of water coordinates are to be used (tmao2.dat).
