@@ -1,4 +1,4 @@
-# _E. coli_ 16S Ribosome 
+Simulation of the _E. coli_ 16S Ribosome
 How to use Charmm-GUI to produce NAMD compatible PDB and PSF files
 
 ***Before doing anything, find and identify non-standard residues and ensure you know where they are in the molecule***
