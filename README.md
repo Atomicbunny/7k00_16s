@@ -65,7 +65,7 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 4: run gen_tmaomt.sh with first argument "centered.1zih_wbi.pdb" and second argument "5781" to produce a file containing a list of all water coordinates (tmao1.dat).
 
 5: manually make changes to this file (tmao1.dat) , use regex and find to replace all entries /d- with "0 -" to resolve unspaced elements, also remove
- all instances of 1.00 whole word to remove fourth columns. (Do note that this solution is imperfect, however the loss in coordinate precision is very small)
+ all instances of 1.00 whole word to remove fourth columns. (Do note that this solution is imperfect, however the loss in coordinate precision is small and only affects tmao molecules)
 
 6: run gen_tmaomt2.sh, this will create tmao.pdb, a pseudorandom coordinate pdb file of TMAO molecules.
 
@@ -80,7 +80,7 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 11: You may get an unusual bond error (should only be one or two), use vmd to identify which atoms are involved in the bond, and remove this bond, the angles, and dihedrals from the psf file. Be sure when editing the psf file to not leave any extra whitespace
 at the end of lines and to increment the number of bonds, angles and dihedrals at the start of each section based on how many you removed.
 
-12: check psf file in vmd, if it loads without errors, it should be good to go.
+12: check psf file in vmd, if it loads without errors, it should be good to go. (unusual bond and max bond errors may occur)
 
 13: run minimization/equilibration step in separate directories for each pdb
 
