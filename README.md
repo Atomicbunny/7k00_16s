@@ -78,7 +78,8 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 10: repeat steps 6-9 twice more to create 3 separate pseudorandom TMAO coordinate sets implemented with the 16s subunit in a water box.
 
 11: You may get an unusual bond error (should only be one or two), use vmd to identify which atoms are involved in the bond, and remove this bond, the angles, and dihedrals from the psf file. Be sure when editing the psf file to not leave any extra whitespace
-at the end of lines and to increment the number of bonds, angles and dihedrals at the start of each section based on how many you removed.
+at the end of lines and to increment the number of bonds, angles and dihedrals at the start of each section based on how many you removed. Do note that this procedure should only be used to remove bonds that do not reflect the system IE rigid bonds between Mg ions and 
+the ribosome.
 
 12: check psf file in vmd, if it loads without errors, it should be good to go. (unusual bond and max bond errors may occur)
 
