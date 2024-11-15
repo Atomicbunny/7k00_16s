@@ -23,7 +23,7 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
  
  4: Click the arrow captioned next step at the bottom right of the screen. (Note: It may take a long time for large molecules, about 15-30 minutes max, avg time about 5 minutes).
  
- 5: Once loading is finished, it will automatically process segments out of the input, and give you options to modify the settings it generated. We removed the Paromomycin (PAR) and Spermidine (SPD) but kept all nucleic acids , Mg(2+) ions, and crystal waters. Click the next step arrow once you are satisfied.
+ 5: Once loading is finished, it will automatically process segments out of the input, and give you options to modify the settings it generated. We removed the Paromomycin (PAR) but kept all nucleic acids , Mg(2+) ions, and crystal waters. Click the next step arrow once you are satisfied.
 
  
  7: You are given several options, but we are interested in one near the bottom titled Non-standard amino acid / RNA substitution, check the box next to it.
