@@ -4,7 +4,7 @@ How to use Charmm-GUI to produce NAMD compatible PDB and PSF files
 ***Before doing anything, find and identify non-standard residues and ensure you know where they are in the molecule***
 
 For control test of simulation:
-Equilibration of 7k00 16s subunit in water box
+Equilibration of 7k00 16s rRNA in water box
 
 Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 1. Downloaded "PDB format-like files (.tar.gz) and extracted 7k00pdbbundle1.pdb
@@ -50,7 +50,7 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
 #  Simulation TMAO
 
----Simulation of 16S subunit of E.Coli ribosome in 1.00 mol/L TMAO solution ---
+---Simulation of 16S rRNA of E.Coli ribosome in 1.00 mol/L TMAO solution ---
 
 *for water box of size used (can be found in 7k0016s2.namd.pdb) , 5781 molecules of TMAO corresonds to 1.00 mol/L TMAO
 
@@ -75,7 +75,7 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
 9: run solvate_with_tmaomt2 to resolvate the system. This will create files that will be used in simulation.
 
-10: repeat steps 6-9 twice more to create 3 separate pseudorandom TMAO coordinate sets implemented with the 16s subunit in a water box.
+10: repeat steps 6-9 twice more to create 3 separate pseudorandom TMAO coordinate sets implemented with the 16s rRNA in a water box.
 
 11: You may get an unusual bond error (should only be one or two), use vmd to identify which atoms are involved in the bond, and remove this bond, the angles, and dihedrals from the psf file. Be sure when editing the psf file to not leave any extra whitespace
 at the end of lines and to increment the number of bonds, angles and dihedrals at the start of each section based on how many you removed. Do note that this procedure should only be used to remove bonds that do not reflect the system IE rigid bonds between Mg ions and 
