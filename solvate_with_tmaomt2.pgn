@@ -1,0 +1,17 @@
+## Description: Solvate biomolecule in water cube
+## Input: 7k0016s2_tmao.namd.psf, 7k0016s2_tmao.namd.pdb
+## Output: 7k0016s2_tmao_wb.psf, 7k0016s2_tmao_wb.pdb
+
+# load solvate package
+package require solvate
+
+# solvate the biomolecular (b=2.4 A for prot; b=1.6 A for nucl) and output 
+# the result
+solvate 7k0016s2_tmao.namd.psf 7k0016s2_tmao.namd.pdb -b 1.6 -o 7k0016s2_tmao_wb
+
+package require autoionize
+autoionize -psf 7k0016s2_tmao_wb.psf -pdb 7k0016s2_tmao_wb.pdb -sc 0.10 -o 7k0016s2_tmao_wbi
+
+exit
+
+

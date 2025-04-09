@@ -1,0 +1,30 @@
+## Description: Set up biomolecule for NAMD
+
+# load psfgen package
+package require psfgen
+
+# load CHARMM36 topology file
+topology          top_all36_na.rtf
+topology          top_all36_prot.rtf
+topology          top_all36_carb.rtf
+topology          top_all36_lipid.rtf
+topology          toppar_all36_na_rna_modified.str 
+topology          spd.rtf
+topology          top_all36_cgenff.rtf
+topology          toppar_water_ions_namd.str
+
+# read in PDB structure; add end caps
+segment A {pdb centered.7k0016s2.namd.pdb; first none; last none; auto angles dihedrals }
+
+# read in PDB coordinates for protein assign to segment A
+coordpdb centered.7k0016s2.namd.pdb A
+
+# guess coordinates for any missing atoms (e.g., hydrogens)
+guesscoord
+
+# write out the connectivity information
+writepsf 7k0016s2_tmao.namd.psf
+# write out the converted PDB file
+writepdb 7k0016s2_tmao.namd.pdb
+
+exit
