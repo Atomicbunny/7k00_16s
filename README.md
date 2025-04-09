@@ -58,31 +58,33 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
 1: 7k0016s2.namd.pdb is simply a renamed version of pdbreaderedit1.pdb, this was used in the generation of the following pdb files.
 
-2: Solvate 16s subunit in water box with Na+ and Cl- ions at 0.01 mol/L to neutralize charge. Kept unsolvated file on hand. (we will use this file as a reference but not as our final water box, this is due to errors using autoionize that remained unresolved through testing)
+2: ran center_prot_origin.tcl to center the waters around the origin, result is renamed to centered.7k0016s2.namd.pdb 
 
-3: removed crystal waters from solvated pdb and ran center_prot_origin.tcl to center the waters around the origin, result is renamed to centered.1zih_wbi.pdb just for the sake of differentiating between it and the upcoming trajectories. This file will simply act as reference for water coordinates (you can remove the RNA, ions and crystal waters as all we are interested in are the generated water molecule coordinates)
+3: Solvate 16s subunit in water box with Na+ and Cl- ions at 0.01 mol/L to neutralize charge. Kept unsolvated file on hand. (we will use this file as a reference but not as our final water box, this is due to errors using autoionize that remained unresolved through testing)
 
-4: run gen_tmaomt.sh with first argument "centered.7k0016s2_wbi.pdb" and second argument "5781" to produce a file containing a list of all water coordinates (tmao1.dat).
+4: removed crystal waters from solvated pdb , result is renamed to centered.7k0016s2.namd.pdb just for the sake of differentiating between it and the upcoming trajectories. This file will simply act as reference for water coordinates (you can remove the RNA, ions and crystal waters as all we are interested in are the generated water molecule coordinates)
 
-5: manually make changes to this file (tmao1.dat) , use regex and find to replace all entries /d- with "0 -" to resolve unspaced elements, also remove
+5: run gen_tmaomt.sh with first argument "centered.7k0016s2.namd.pdb" and second argument "5781" to produce a file containing a list of all water coordinates (tmao1.dat).
+
+6: manually make changes to this file (tmao1.dat) , use regex and find to replace all entries /d- with "0 -" to resolve unspaced elements, also remove
  all instances of 1.00 whole word to remove fourth columns. (Do note that this solution is imperfect, however the loss in coordinate precision is small and only affects tmao molecules)
 
-6: run gen_tmaomt2.sh, this will create tmao.pdb, a pseudorandom coordinate pdb file of TMAO molecules.
+7: run gen_tmaomt2.sh, this will create tmao.pdb, a pseudorandom coordinate pdb file of TMAO molecules.
 
-7: manually realign all entries past residue 1000 of tmao.pdb to eliminate column alignment errors.
+8: manually realign all entries past residue 1000 of tmao.pdb to eliminate column alignment errors.
 
-8: run setup_with_tmaomt using the unsolvated pdb file, this will generate a pdb with the 16s subunit surrounded by TMAO
+9: run setup_with_tmaomt using the unsolvated pdb file, this will generate a pdb with the 16s subunit surrounded by TMAO
 
-9: run solvate_with_tmaomt2 to resolvate the system. This will create files that will be used in simulation.
+10: run solvate_with_tmaomt2 to resolvate the system. This will create files that will be used in simulation.
 
-10: repeat steps 6-9 twice more to create 3 separate pseudorandom TMAO coordinate sets implemented with the 16s rRNA in a water box.
+11: repeat steps 6-9 twice more to create 3 separate pseudorandom TMAO coordinate sets implemented with the 16s rRNA in a water box.
 
-11: You may get an unusual bond error (should only be one or two), use vmd to identify which atoms are involved in the bond, and remove this bond, the angles, and dihedrals from the psf file. Be sure when editing the psf file to not leave any extra whitespace
+12: You may get an unusual bond error (should only be one or two), use vmd to identify which atoms are involved in the bond, and remove this bond, the angles, and dihedrals from the psf file. Be sure when editing the psf file to not leave any extra whitespace
 at the end of lines and to increment the number of bonds, angles and dihedrals at the start of each section based on how many you removed. Do note that this procedure should only be used to remove bonds that do not reflect the system IE rigid bonds between Mg ions and 
 the ribosome.
 
-12: check psf file in vmd, if it loads without errors, it should be good to go. (unusual bond and max bond errors may occur)
+13: check psf file in vmd, if it loads without errors, it should be good to go. (unusual bond and max bond errors may occur)
 
-13: run minimization/equilibration step in separate directories for each pdb
+14: run minimization/equilibration step in separate directories for each pdb
 
-14: run dynamics in separate directories
+15: run dynamics in separate directories
