@@ -60,9 +60,9 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
 2: Solvate 16s subunit in water box with Na+ and Cl- ions at 0.01 mol/L to neutralize charge. Kept unsolvated file on hand. (we will use this file as a reference but not as our final water box, this is due to errors using autoionize that remained unresolved through testing)
 
-3: removed crystal waters from solvated pdb and ran center_prot_origin.tcl to center the waters around the origin, result is renamed to centered.1zih_wbi.pdb (you can remove the RNA, ions and crystal waters as all we are interested in are the generated water molecule coordinates)
+3: removed crystal waters from solvated pdb and ran center_prot_origin.tcl to center the waters around the origin, result is renamed to centered.1zih_wbi.pdb just for the sake of differentiating between it and the upcoming trajectories. This file will simply act as reference for water coordinates (you can remove the RNA, ions and crystal waters as all we are interested in are the generated water molecule coordinates)
 
-4: run gen_tmaomt.sh with first argument "centered.1zih_wbi.pdb" and second argument "5781" to produce a file containing a list of all water coordinates (tmao1.dat).
+4: run gen_tmaomt.sh with first argument "centered.7k0016s2_wbi.pdb" and second argument "5781" to produce a file containing a list of all water coordinates (tmao1.dat).
 
 5: manually make changes to this file (tmao1.dat) , use regex and find to replace all entries /d- with "0 -" to resolve unspaced elements, also remove
  all instances of 1.00 whole word to remove fourth columns. (Do note that this solution is imperfect, however the loss in coordinate precision is small and only affects tmao molecules)
