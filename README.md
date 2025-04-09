@@ -58,13 +58,13 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
 1: 7k0016s2.namd.pdb is simply a renamed version of pdbreaderedit1.pdb, this was used in the generation of the following pdb files.
 
-2: ran center_prot_origin.tcl to center the waters around the origin, result is renamed to centered.7k0016s2.namd.pdb 
+2: ran center_prot_origin.tcl to center the molecule around the origin, result is renamed to centered.7k0016s2.namd.pdb. We will use this file to obtain valid TMAO coordinates for a water box and to generate the TMAO water box. Make sure you keep this.
 
-3: Solvate 16s subunit in water box with Na+ and Cl- ions at 0.01 mol/L to neutralize charge. Kept unsolvated file on hand. (we will use this file as a reference but not as our final water box, this is due to errors using autoionize that remained unresolved through testing)
+3: Solvate 16s subunit in water box with Na+ and Cl- ions at 0.01 mol/L to neutralize charge. Kept unsolvated file on hand.
 
-4: removed crystal waters from solvated pdb , result is renamed to centered.7k0016s2.namd.pdb just for the sake of differentiating between it and the upcoming trajectories. This file will simply act as reference for water coordinates (you can remove the RNA, ions and crystal waters as all we are interested in are the generated water molecule coordinates)
+4: removed crystal waters from solvated pdb that lacks TMAO, result is renamed to whatever you see fit as this file is just for obtaining valid water coordinates. (You can remove the RNA, ions and crystal waters as all we are interested in are the generated water molecule coordinates, but you don't have to)
 
-5: run gen_tmaomt.sh with first argument "centered.7k0016s2.namd.pdb" and second argument "5781" to produce a file containing a list of all water coordinates (tmao1.dat).
+5: run gen_tmaomt.sh with first argument "name of solvated centered PDB" and second argument "5781" to produce a file containing a list of all water coordinates (tmao1.dat). You now no longer need the solvated pdb without TMAO.
 
 6: manually make changes to this file (tmao1.dat) , use regex and find to replace all entries /d- with "0 -" to resolve unspaced elements, also remove
  all instances of 1.00 whole word to remove fourth columns. (Do note that this solution is imperfect, however the loss in coordinate precision is small and only affects tmao molecules)
@@ -75,7 +75,7 @@ Original file obtained from RCSB PDB: https://www.rcsb.org/structure/7k00
 
 9: run setup_with_tmaomt using the unsolvated pdb file, this will generate a pdb with the 16s subunit surrounded by TMAO
 
-10: run solvate_with_tmaomt2 to resolvate the system. This will create files that will be used in simulation.
+10: run solvate_with_tmaomt2 to solvate your new RNA-TMAO. This will create files that will be used in simulation.
 
 11: repeat steps 6-9 twice more to create 3 separate pseudorandom TMAO coordinate sets implemented with the 16s rRNA in a water box.
 
